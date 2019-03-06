@@ -1,0 +1,14 @@
+<li [ngClass]="{'list-group-item': true,
+				'list-group-item-success': commentaire.loveIt > 0,
+				'list-group-item-danger': commentaire.loveIt <0 }" >
+  <div>
+  	<h3  >{{commentaire.title}}</h3> <span class="pull-right">{{commentaire.created_at | date:  'MM/dd/yy, h:mm a' }}</span>
+  </div>
+  <div>
+  	{{commentaire.content}}
+  </div>
+  <div>
+  	<button type="button" class="btn btn-success" (click)="onLike()">Love it</button>
+	<button type="button" class="btn btn-danger" (click)="onDislike()">Don't love it</button>
+  </div>
+</li>
